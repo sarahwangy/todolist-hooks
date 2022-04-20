@@ -1,16 +1,14 @@
 import React, { useState } from 'react'
 import TextField from '@mui/material/TextField';
+import useInputToDo from '../state-hooks/useInputState'
 
 
 export default function TodoForm({ saveTodo }) {
-    const [value, setValue] = useState('');
 
-    const onChange = event => {
-        const newValue = event.target.value
-        setValue(newValue)
-    };
+    // 自己解构
+    const { value, onChange } = useInputToDo()
+    console.log("form value", value)
 
-    console.log(value)
     return (
         <>
             <h1> TO DO LIST</h1>
